@@ -1,0 +1,1110 @@
+/*========================== SASS ==========================*/
+$font-sut: "sutregular";
+$color-format: #d60076;
+$color-white: #ffffff;
+$color-menu-hover: #ff0000;
+$color-content-box: #645656;
+$color-box-shadow: 2px 8px 14px 0px rgba(62, 75, 73, 0.25);
+$color-video-shadow: 4px 8px 12px 7px rgba(62, 75, 73, 0.25);
+$background-part2: #7c0000;
+$background-menu-ui: #b60265;
+$background-menu-hover: #fffb00;
+$background-circle: rgb(0, 44, 65);
+$background-format3: linear-gradient(7deg, rgb(184, 158, 11) 0%, rgb(255, 189, 8) 22%,rgb(253, 201, 30) 47%,rgb(255, 115, 0) 75%,rgb(255, 115, 0) 100%);
+$background-format5: linear-gradient(0deg, rgb(212, 226, 83) 0%,rgb(212, 226, 83) 1%,rgb(233, 202, 99) 19%, rgb(247, 167, 114) 32%, rgb(228, 111, 64) 54%,#7c0000);
+$background-format6: linear-gradient( 0deg,#d60076 0%,#ff0062 1%,rgb(172, 0, 66) 19%,rgb(172, 0, 66) 32%,rgb(172, 0, 66) 54%,rgb(212, 226, 83));;
+$background-bg-part: linear-gradient(3deg,rgb(255, 115, 0) 63%,rgb(255, 115, 0) 100%);
+$body-background-color: linear-gradient(9deg,rgb(39, 24, 124) 0%, rgb(32, 25, 102) 19%,rgb(23, 32, 114) 37%,rgb(0, 0, 0) 58%,rgb(0, 44, 65) 77%, rgb(64, 147, 185) 100%);
+$background-linear-pink: linear-gradient(90deg,rgb(204, 67, 67) 0%,rgb(38, 216, 222) 22%,rgb(57, 207, 227) 47%, rgb(114, 87, 234) 75%,rgb(90, 105, 241) 100%);
+$background-body-content: linear-gradient(90deg,rgb(0, 44, 65) 0%, rgb(0, 44, 65) 15%,  rgb(0, 44, 65) 40%, rgba(177, 96, 4, 0.562) 73%,rgba(136, 151, 0, 0.568) 81%,rgb(102, 70, 0) 100%);
+$background-header-content: linear-gradient(90deg, rgb(184, 158, 11) 0%, rgb(255, 189, 8) 22%, rgb(253, 201, 30) 47%, rgb(255, 216, 43) 75%,rgb(255, 134, 35) 100%);
+/*========================== SASS ==========================*/
+
+/*========================== html ==========================*/
+@font-face {
+    font-family: 'sutregular';
+    src: url('../fonts/sut_regular_ver_1.00-webfont.eot');
+    src: url('../fonts/sut_regular_ver_1.00-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sut_regular_ver_1.00-webfont.woff2') format('woff2'),
+         url('../fonts/sut_regular_ver_1.00-webfont.woff') format('woff'),
+         url('../fonts/sut_regular_ver_1.00-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+0E00–U+0E7F;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+    
+  body {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  body {
+    background: $body-background-color;
+  }
+  
+  .layout-container { /*ภาพรวม*/
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  /*========================== html ==========================*/
+  
+  /*========================== menu ==========================*/
+  .menu {
+    margin: 0;
+  }
+  
+  .menu nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    opacity: 0.9;
+    background: $color-format;
+  }
+  
+  .logo-tab {
+    padding-top: 1vh;
+    display: block;
+    margin: 0 0 -0.5vw 3vw;
+  }
+    
+  .menu a {
+    font-size: 1vw;
+    color: $color-white;
+    text-decoration: none;
+  }
+  
+  .menu a:hover {
+    color: $color-menu-hover;
+  }
+  
+  .menu ul {
+    margin: 0 3vw 0 0;
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+  }
+  //
+  .menu ul li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .menu ul li a {
+    display: block;
+    padding: 1.2vw 1.3vw;
+  }
+  
+  .menu ul li i {
+    padding-left: 8px;
+  }
+  
+  .menu ul li:hover {
+    background: $background-menu-hover;
+  }
+  
+  .menu ul li:hover ul {
+    display: block;
+  }
+  
+  .menu ul li a:hover {
+    color: $color-menu-hover;
+  }
+  
+  .menu ul ul { /*Key*/
+    position: absolute;
+    min-width: 200px;
+    display: none;
+  }
+  
+  .menu ul ul li {
+    text-align: left;
+    display: block;
+    background: $background-menu-ui;
+  }
+
+  .c1 {
+    display: none;
+    align-items: center;
+    padding: unset;
+    /* width: 100%; */
+    justify-content: space-between;
+    padding: 2vw 2vw 0 2vw;
+    color: #e3e3e3;
+    font-size: 4vw;
+  }
+
+@media (max-width: 780px) {
+  .logo-tab {
+    display: none;
+  }
+
+  .c1 {
+    display: flex;
+  }
+
+  .menu nav {
+    display: block;
+  }
+
+  .menu a {
+    font-size: 3.5vw;
+  }
+
+  .menu ul {
+    display: none;
+    width: 100%;
+    position: static;
+    background: $color-format;;
+  }
+
+  .menu ul li {
+    display: block;
+  }
+
+  .menu ul li a {
+    padding: 2.5vw 3vw;
+  }
+
+  .menu ul ul {
+    position: static;
+    background: $color-format;;
+  }
+}
+
+  /*========================== menu ==========================*/
+  
+  /*========================== banner ==========================*/
+  .wallpaper {
+    background-image: url(../images/cover01.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 62rem;
+  }
+  
+  .wallpaper img {
+    width: 100%;
+  }
+  
+  .logo_banner {
+    width: 70%;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .logo_banner img { /*Animation blur*/
+    width: 100%;
+    animation: logo_banner_animate 3.5s linear infinite;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes logo_banner_animate {
+    0% {
+      filter: blur(0);
+    }
+    
+    40% {
+      filter: blur(20px);
+    }
+    
+    80% {
+      filter: blur(0);
+    }
+    
+    100% {
+      filter: blur(0);
+    }
+  }
+  /*========================== banner ==========================*/
+  
+  /*========================== format1 ==========================*/
+  .format1-container {
+    margin-top: 4.479166666666667%;
+  }
+  
+  .format1-layout {
+    display: grid;
+    grid-template-columns: 56.19791666666667% 1fr;
+  }
+  
+  .format1-photo {
+    background-image: url(../images/course.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 35rem;
+  }
+  
+  .format1-con {
+    margin: 1.570833333333333% 0 0 -9.739583333333333%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .format1 {
+    grid-column: 1 /3;
+  }
+  
+  .topic-format1 { /*Font Background*/
+    width: 66%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    padding: 0.7vh 0;
+    text-align: center;
+    background: $background-header-content;
+    border-radius: 3vh;
+    box-shadow: $color-box-shadow;
+  }
+  
+  .topic-format1 h2 {
+    font-family: $font-sut;
+    font-size: 2rem;
+    color: $color-white;
+  }
+  
+  .layout_content { /*Background*/
+    width: 85%;
+    height: auto;
+    background: $background-body-content;
+    border-radius: 5% 10% 10%;
+    opacity: 0.8;
+    margin-top: -2.6rem;
+    box-shadow: $color-box-shadow;
+  }
+  
+  .message { /*size text*/
+    font-family: $font-sut;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: $color-white;
+    padding: 2rem 3rem 2rem 3rem;
+    opacity: 1;
+  }
+  
+  .message li {/*ความห่าง*/
+    margin-top: 1.5rem;
+  }
+  
+  .circle {/*วงหลม*/
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    top: 50%;
+    left: 50%;
+    background: $background-circle;
+    z-index: -1;
+    border-radius: 50%;
+  }
+
+  @media only screen and (max-width: 1048px) and (min-width: 780px) {
+    .format1-con {
+      grid-template-columns: 1fr;
+    }
+  
+    .layout_content {
+      width: 100%;
+    }
+  
+    .format1 {
+      padding-right: 1rem;
+    }
+  
+    .circle {
+      display: none;
+    }
+  }
+  
+  @media only screen and (max-width: 780px) {
+    .format1-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+    }
+  
+    .format1-photo {
+      background-size: 53rem 35rem;
+      width: 100%;
+      height: 35rem;
+    }
+  
+    .format1-con {
+      margin: -2% 0 0 0;
+    }
+  
+    .topic-format1 {
+      width: 94%;
+      margin-left: 3%;
+    }
+  
+    .topic-format1 h2 {
+      font-size: 1.5rem;
+    }
+  
+    .layout_content {
+      width: 100%;
+      border-radius: 0;
+    }
+  
+    .message {
+      font-size: 1.25rem;
+    }
+  
+    .circle {
+      display: none;
+    }
+    
+  }
+
+  /*========================== format1 ==========================*/
+  
+  /*========================== format2 ==========================*/
+  .format2-container {
+    margin: 4.479166666666667% 0 -3.9px 0;
+  }
+  
+  .format2-layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .format2-con {
+    margin: 3% 0 0 13%;
+    grid-column: 1 / 4;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .layout-format2 {
+    width: 90%;
+  }
+  
+  .topic-format2 {
+    width: 77%;
+    height: auto;
+    margin: 0 0 3vh;
+    padding: 0.7vh 0;
+    text-align: center;
+    background: $background-header-content;
+    border-radius: 3vh;
+    box-shadow: $color-box-shadow;
+  }
+  
+  .topic-format2 h2 {
+    font-family: $font-sut;
+    font-size: 2rem;
+    color: $color-white;
+  }
+  
+  .format2-con .message {
+    font-family: $font-sut;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    color: $color-white;
+    font-weight: lighter;
+    padding: 1% 10% 0 0;
+    text-align: justify;
+  }
+  
+  .computer { /*พื้นที่เว็บ*/
+    position: relative;
+    top: 10%;
+    left: -22%;
+    grid-column: 4 / 6;
+  }
+  
+  .computer img { /*ปรับรูป*/
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+  
+  .background-cut-format2 { /*Background*/
+    position: relative;
+    clip-path: polygon(100% 0%, -1% 99%, 100% 100%);
+    width: 100%;
+    margin-top: -20rem;
+    background: $background-bg-part;
+    grid-column: 1 / 6;
+    z-index: -1;
+  }
+
+  .computer-mobile {
+    display: none;
+  }
+
+  .computer-mobile img {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 780px) {
+    .format2-layout {
+      grid-template-columns: 1fr;
+    }
+  
+    .format2-con {
+      margin: 3% 0 0 9%;
+    }
+  
+    .topic-format2 {
+      width: auto;
+    }
+  
+    .topic-format2 h2 {
+      font-size: 1.5rem;
+    }
+  
+    .format2-con .message {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+  
+    .computer {
+      display: none;
+    }
+  
+    .computer-mobile { /*ปรับรูป*/
+      display: block;
+    }
+  }
+
+  /* ========================== format2 ==========================  */
+  
+  /* ========================== format3 ==========================  */
+  .layout-format3 {/*แบ่งพื้นที่ grid*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8rem;
+    padding: 4rem 5rem 0;
+  }
+  
+  .format3-con {/*Background*/
+    width: 100%;
+    height: auto;
+    padding-bottom: 13rem;
+    background: $background-format3;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 83%); /*ตัดขนาดรูปร่าง*/
+  }
+  
+  .topic-format3 h2 { /*Font*/
+    font-family: $font-sut;
+    font-size: 2rem;
+    color: $color-white;
+    padding: 14rem 0 0 8rem;
+  }
+  
+  .video-frame {/*ขนาดและหน้าตา เงา 16:9 */
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 25px;
+      height: 0;
+      box-shadow: $color-video-shadow;
+  }
+    
+  .video-frame iframe { /*ตำแหน่ง*/
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+  @media only screen and (max-width: 780px) {
+  .layout-format3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5rem;
+    padding: 3rem 2rem 0;
+  }
+
+  .topic-format3 h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2rem 0 0;
+  }
+}
+  
+  /* ========================== format3 ==========================  */
+  
+  /* ========================== format4 ==========================  */
+  .format4-layout {
+    display: grid;
+    grid-template-columns: 58.125% 1fr;
+  }
+  
+  .format4-con {
+    position: relative;
+    z-index: 1000;
+    font-family: $font-sut;
+    color: $color-white;
+    padding: 2rem 5rem 9rem 8rem;
+  }
+  
+  .format4-con h2 {/*Text linear*/
+    position: relative;
+    padding-top: 1.5rem;
+    font-size: 12rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: $background-linear-pink;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .format4-con h3 {/*text หัวข้อ*/
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .format4-con h4 {/*text หัวข้อย่อย*/
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .message-format4 {/*text เนื้อหา*/
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-align: justify;
+  }
+  
+  .chula {
+    padding-right: 2rem;
+  }
+  .chula img {
+    width: 100%;
+  }
+  
+  .background-cut-format4 { /*Background*/
+    position: relative;
+    clip-path: polygon(100% 20%, -9% 100%, 100% 100%);
+    margin-top: -20rem;
+    background: $background-part2;
+    grid-column: 1 / 6;
+    z-index: -1;
+  }
+
+  .chula-mobile {
+    display: none;
+  }
+
+  .chula-mobile img {
+    width: 100%;
+  }
+
+  
+
+@media only screen and (max-width: 1048px) and (min-width: 780px) {
+  .format4-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .chula {
+    display: none;
+  }
+
+  .chula-mobile {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .format4-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .format4-con {
+    text-align: center;
+    margin-top: -7rem;
+    padding: 0rem 3rem 3rem;
+  }
+
+  .message-format4 {
+    font-size: 1.25rem;
+    text-align: justify;
+  }
+
+  .chula {
+    display: none;
+  }
+
+  .chula-mobile {
+    display: block;
+  }
+}
+  /* ========================== format4 ==========================  */
+  
+  /* ========================== format5 ==========================  */
+  .format5-layout {/*Baclground*/
+    height: auto;
+    background: $background-format5;
+    margin-top: -1px;
+  }
+  
+  .topic-format5 {
+    padding: 2rem 0 0 8rem;
+    font-family: $font-sut;
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+  
+  .layout-item {
+    font-family: $font-sut;
+  }
+  
+  .layout-format5 {/*Grid*/
+    display: grid;
+    grid-template-columns: repeat(2, 15rem);
+    justify-content: center;
+    text-align: center;
+    grid-gap: 5rem 15rem;
+    padding: 5rem;
+  }
+  
+  .circle-box {/*วงกลมรูป*/
+    position: relative;
+    color: $color-white;
+    width: 100%;
+    height: 15rem;
+    background: $color-white;
+    border-radius: 50%;
+    justify-self: center;
+  }
+  
+  .circle-box h1 {/*Text Linear*/
+    position: relative;
+    padding-top: 1.5rem;
+    font-size: 12rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: $background-linear-pink;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .glass {/*Border*/
+    border: 0.1rem solid $color-white;
+    border-radius: 0 0 15px 15px;
+    margin-top: -7rem;
+    padding-top: 7rem;
+  }
+  
+  .content-glass {/*padding*/
+    padding: 0 0.5rem 0.5rem;
+  }
+
+  .eh1 {
+    padding: 0 0.5rem 4rem;
+  }
+
+  .eh2 {
+    padding: 0 0.5rem 4rem;
+  }
+  
+  .eh3 {
+    padding: 0 0.5rem 8rem;
+  }
+  
+  .eh4 {
+    padding: 0 0.5rem 6rem;
+  }
+  
+  .content-glass h3 { /*Text หัวข้อ*/
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+    color: $color-white;
+  }
+  
+  .content-glass p {/*Text เนื้อหา*/
+    font-size: 1.3rem;
+    color: $color-white;
+    font-weight: lighter;
+    text-align: start;
+  }
+  
+  .bg1,.bg2,.bg3,.bg4 {
+    position: absolute;
+    width: 100%;
+    height: 15rem;
+  }
+  
+  .layout-item:hover .bg1 {
+    background-image: url(../images/img1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    filter: blur(2px);
+  }
+  
+  .layout-item:hover .bg2 {
+    background-image: url(../images/img2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    filter: blur(2px);
+  }
+  
+  .layout-item:hover .bg3 {
+    background-image: url(../images/img3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    filter: blur(2px);
+  }
+  
+  .layout-item:hover .bg4 {
+    background-image: url(../images/img4.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    filter: blur(2px);
+  }
+  
+  .layout-item:hover .circle-box h1 {/*white*/
+    background: $color-white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .layout-item:hover .glass {/*Background white*/
+    border: 0.1rem solid $color-white;
+    border-radius: 0 0 15px 15px;
+    margin-top: -7rem;
+    padding-top: 7rem;
+    background: $color-white;
+  }
+  
+  .layout-item:hover .content-glass h3 {/*หัวข้อ text linear*/
+    background: $background-linear-pink;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .layout-item:hover .content-glass p {/*สีฟ้อน เนื้อหา*/
+    color: $color-content-box;
+  }
+
+@media only screen and (max-width: 1048px) and (min-width: 780px) {
+  .layout-format5 {
+    grid-template-columns: 15rem 15rem;
+  }
+
+  .layout-item {
+    justify-self: center;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .format5-layout {
+    text-align: center;
+  }
+
+  .topic-format5 {
+    padding: 0;
+    font-size: 3.2rem;
+  }
+
+  .content-glass h3 {
+    font-size: 1.6rem;
+  }
+
+  .content-glass p {
+    font-size: 1.25rem;
+  }
+
+  .layout-format5 {
+    grid-template-columns: 15rem;
+  }
+
+  .layout-item {
+    justify-self: center;
+  }
+}
+
+  /* ========================== format5 ==========================  */
+
+  /* ========================== format6 ==========================  */
+.format6-layout {/*Baclground*/
+  height: auto;
+  background: $background-format6;
+  margin-top: -1px;
+}
+
+.topic-format6 {
+  padding: 2rem 0 0 8rem;
+  font-family: "sutregular";
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: $color-white;
+}
+
+.layout-format6 {/*Grid*/
+  display: grid;
+  grid-template-columns: repeat(4, 15rem);
+  justify-content: center;
+  text-align: center;
+  grid-gap: 5rem 5rem;
+  padding: 5rem;
+}
+
+.eh6-1,.eh6-2,.eh6-3,.eh6-4,.eh6-5,.eh6-6,.eh6-7,.eh6-8,.eh6-9,.eh6-10,.eh6-11,.eh6-12 {
+  padding: 0 0.5rem 4rem;
+}
+
+.bg6-1,.bg6-2,.bg6-3,.bg6-4,.bg6-5,.bg6-6,.bg6-7,.bg6-8,.bg6-9,.bg6-10,.bg6-11,.bg6-12 {
+  position: absolute;
+  width: 100%;
+  height: 15rem;
+}
+
+.layout-item:hover .bg6-1 {
+  background-image: url(../images/img6-1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(2px);
+}
+
+.layout-item:hover .bg6-2 {
+  background-image: url(../images/img6-2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(2px);
+}
+
+.layout-item:hover .bg6-3 {
+  background-image: url(../images/img6-3.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(2px);
+}
+
+.layout-item:hover .bg6-4 {
+  background-image: url(../images/img6-4.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(2px);
+}
+
+.layout-item:hover .bg6-5 {
+  background-image: url(../images/img6-5.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(2px);
+}
+
+.layout-item:hover .bg6-6 {
+  background-image: url(../images/img6-6.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(2px);
+}
+
+.layout-item:hover .bg6-7 {
+  background-image: url(../images/img6-7.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(2px);
+}
+
+.layout-item:hover .bg6-8 {
+  background-image: url(../images/img6-8.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(2px);
+}
+
+.layout-item:hover .bg6-9 {
+  background-image: url(../images/img6-9.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(2px);
+}
+
+.layout-item:hover .bg6-10 {
+  background-image: url(../images/img6-10.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(2px);
+}
+
+.layout-item:hover .bg6-11 {
+  background-image: url(../images/img6-11.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(2px);
+}
+
+.layout-item:hover .bg6-12 {
+  background-image: url(../images/img6-12.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  filter: blur(2px);
+}
+
+@media only screen and (max-width: 1048px) and (min-width: 780px) {
+  .layout-format6 {
+    grid-template-columns: 15rem 15rem;
+  }
+
+  .layout-item {
+    justify-self: center;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .format5-layout {
+    text-align: center;
+  }
+
+  .topic-format6 {
+    padding: 20;
+    font-size: 3.2rem;
+  }
+
+  .content-glass h3 {
+    font-size: 1.6rem;
+  }
+
+  .content-glass p {
+    font-size: 1.25rem;
+  }
+
+  .layout-format6 {
+    grid-template-columns: 15rem;
+  }
+
+  .layout-item {
+    justify-self: center;
+  }
+}
+
+  /* ========================== format6 ==========================  */
+  
+  /* ========================== footer ==========================  */
+  footer {
+    width: 100%;
+    height: auto;
+    background: $color-format;
+  }
+  
+  .layout-footer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  
+  .detail {/*ความห่าง และสี*/
+    font-family: $font-sut;
+    color: $color-white;
+    padding: 6rem 0 0 10rem;
+  }
+  
+  .detail h3 a {/*ไม่มีเส้นใต้ Facebook เปลี่ยนสี */
+    text-decoration: none;
+    color: $color-white;
+  }
+  
+  .detail h2 {/*ความห่างด้านล่าง*/
+    margin-bottom: 15px;
+  }
+  
+  .detail h3 {/*ความห่างบรรทัด*/
+    line-height: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .detail p {
+    font-size: 1.3rem;
+    font-weight: lighter;
+    margin-bottom: 15px;
+    line-height: 1.5rem;
+  }
+
+@media only screen and (max-width: 1400px) {
+  .detail {
+    text-align: center;
+    padding: 4rem 0 0 8rem;
+  }
+
+  .facebookpage {
+    padding: 4rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .layout-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .detail {
+    text-align: center;
+    padding: 2rem 0 0 0;
+  }
+
+  .facebookpage {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .layout-footer {
+    display: grid;
+    grid-template-columns: 1fr ;
+  }
+
+  .detail {
+    padding: 6rem 185 0 0;
+  }
+
+}
+  /* ========================== footer ==========================  */
